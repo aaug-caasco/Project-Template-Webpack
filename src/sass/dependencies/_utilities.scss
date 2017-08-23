@@ -1,0 +1,90 @@
+.section__ {
+  &cta-container--center-btn {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  &column {
+    width: 100%;
+    display:inline-block;
+
+    @media only screen and (min-width: $mobile-width) {
+
+      padding-right:20px;
+      vertical-align: top;
+
+      &:first-child {
+        width:53%;
+      }
+
+      &:last-child {
+        width:47%;
+        float: right;
+        padding-right:0;
+      }
+    }
+
+  }
+
+  padding-bottom: 0;
+
+}
+
+.h2--enlarge { //when h2's are suppose to look like an h1 keeping SEO in mind
+    @media only screen and (min-width: $mobile-width) {
+      font-size: 2rem;
+    }
+  }
+.text--left {
+  text-align:left;
+  &-desktop {
+    @media only screen and (min-width: $bp-small) {
+      text-align:left;
+    }
+  }
+}
+.text--center {
+  text-align:center;
+  &-mobile {
+    @media only screen and (max-width: $bp-small) {
+        text-align:center;
+    }
+  }
+}
+.float--right { float:right; }
+.float--left { float:left; }
+
+div.desktop__column--force-right {
+  @media only screen and (min-width: $mobile-width) {
+    float:right;
+  }
+}
+
+.remove__bottom-margin, [class*=col-sm] .remove__bottom-margin { margin-bottom: 0 !important;
+}
+
+.add__margin-bottom, section p.add__margin-bottom {
+  margin-bottom:$margin-bottom-mobile;
+
+  @media only screen and (min-width: $bp-large) {
+    margin-bottom: $margin-bottom-desktop;
+  }
+}
+
+.row__margin-bottom--small {
+  margin-bottom: 40px;
+}
+
+.content-layout__copy--middle {
+  @media only screen and (min-width: $bp-large) {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
+.border--vertical-right {
+  border-right: 1px solid #333;
+}
