@@ -1,0 +1,36 @@
+header {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+  height: auto;
+  // text-align: left;
+
+  // @media only screen and (min-width: $mobile-width) {
+  //   margin-bottom: 20px;
+  // }
+
+  @media only screen and (max-width: $mobile-width) {
+    text-align: center;
+    height: 54px;
+    background: #00338d;
+  }
+  .atom-logo {
+    background: rgba(0, 0, 0, 0) url("https://caasco.com/~/media/images/logo-blue.jpg") top left no-repeat;
+    width: 160px;
+    height: 86px;
+    background-size: 100%;
+    display: inline-block;
+    // position: static;
+
+    @media only screen and (max-width: $mobile-width){
+      background: url("https://www.caasco.com/~/media/images/header/logo-blue-solo") center/contain no-repeat !important;
+      height: 40px;
+      position: absolute;
+      top: 8px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,11 +1,7 @@
 //page styling here
-.custom {
-  color:red;
-}
 
-
-@media only screen and (max-width: $mobile-width) {
-  .custom {
-    color: green;
+.test {
+  @media only screen and (min-width: $mobile-width) {
+    color:green;
   }
 }

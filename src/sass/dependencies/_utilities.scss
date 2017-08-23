@@ -33,6 +33,8 @@
 .h2--enlarge { //when h2's are suppose to look like an h1 keeping SEO in mind
     @media only screen and (min-width: $mobile-width) {
       font-size: 2rem;
+      font-weight: 300;
+      font-style: normal;
     }
   }
 .text--left {
@@ -60,14 +62,33 @@ div.desktop__column--force-right {
   }
 }
 
-.remove__bottom-margin, [class*=col-sm] .remove__bottom-margin { margin-bottom: 0 !important;
+.element--margin-center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.add__margin-bottom, section p.add__margin-bottom {
+.margin-bottom--remove, .bottom-margin--remove, [class*=col-sm] .bottom-margin--remove, .remove__bottom-margin, [class*=col-sm] .remove__bottom-margin { margin-bottom: 0 !important;
+}
+
+
+.margin-top--add {
+  margin-top:$margin-bottom-desktop;
+  @media all and (max-width: 60rem) {
+    margin-top:$margin-bottom-mobile;
+  }
+}
+
+.margin-bottom--add, section p.margin-bottom--add, .add__margin-bottom, section p.add__margin-bottom {
   margin-bottom:$margin-bottom-mobile;
 
   @media only screen and (min-width: $bp-large) {
     margin-bottom: $margin-bottom-desktop;
+  }
+}
+
+.margin-bottom--add-mobile, section p.margin-bottom--add-mobile {
+  @media only screen and (max-width: 767px) {
+    margin-bottom:$margin-bottom-mobile;
   }
 }
 

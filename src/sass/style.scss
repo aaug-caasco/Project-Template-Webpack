@@ -9,13 +9,14 @@ Author(s):eChannel
 // ------------------------------------*\
 //     # Dependencies
 // \*------------------------------------
-@import "./sass/dependencies/variables"; // local variables
-@import "./sass/dependencies/mixins";
-//@import "./sass/dependencies/overrides";
-@import "./sass/dependencies/utilities";
-//@import "./sass/dependencies/animate";
-@import "./sass/grid/mixins-grid";
-@import "./sass/grid/grid";
+@import "dependencies/variables"; // local variables
+@import "dependencies/mixins";
+//@import "dependencies/overrides";
+@import "dependencies/utilities";
+//@import "dependencies/animate";
+//@import "dependencies/header";
+@import "grid/mixins-grid";
+@import "grid/grid";
 
 
 //////////////////////////////////////////
@@ -23,7 +24,6 @@ Author(s):eChannel
 //     # Page Styling
 // \*------------------------------------
 
-//@import "sass/header";
-@import "./sass/page";
+@import "page";
 
 //////////////////////////////////////////

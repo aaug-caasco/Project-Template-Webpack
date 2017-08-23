@@ -1,4 +1,4 @@
-import styles from './style.scss'
+import styles from './sass/style.scss'
 import hero from './hero.html'
 import body from './body.html'
 
