@@ -1,18 +1,35 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path'),
+      HtmlWebpackPlugin = require('html-webpack-plugin'),
+      ExtractTextPlugin = require('extract-text-webpack-plugin'),
+      CleanWebpackPlugin = require('clean-webpack-plugin'),
+      CopyWebpackPlugin = require('copy-webpack-plugin'),
+      ImageminPlugin = require('imagemin-webpack-plugin').default;
 
+//the path(s) that should be cleaned
+let pathsToClean = [
+  'build/css.js', 'build/template.js'
+]
+
+// the clean options to use
+let cleanOptions = {
+  //keep these files
+  exclude:  ['index.js'],
+  verbose:  true,
+  dry:      false,
+  watch:    false
+}
 
 module.exports = {
-    entry:  './src',
+    entry:  {
+      index:  './src/index.js',
+      template: './src/template.js',
+      css: './src/css.js'
+    },
 
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js',
         path: path.resolve(process.cwd(), 'build')
     },
-    // externals: {
-    //     './src': 'body.html'
-    // },
 
     module: {
         loaders: [
@@ -82,11 +99,17 @@ module.exports = {
     },
 
     plugins: [
+        new CleanWebpackPlugin(pathsToClean, cleanOptions),
         new ExtractTextPlugin("style.css"),
-
         new HtmlWebpackPlugin({
             template: 'src/template.html',
             inject: true,
-        })
+        }),
+        new CopyWebpackPlugin([
+            // Copy directory contents to {output}/to/directory/
+            { from: 'src/caa', to: 'caa' },
+            { from: 'src/img', to: 'img' },
+        ]),
+        new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
     ]
 };
