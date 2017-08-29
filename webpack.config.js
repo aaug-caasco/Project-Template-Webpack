@@ -22,8 +22,8 @@ let cleanOptions = {
 module.exports = {
     entry:  {
       index:  './src/index.js',
-      template: './src/template.js',
-      css: './src/css.js'
+      template: './src/temp/template.js',
+      css: './src/temp/css.js'
     },
 
     output: {

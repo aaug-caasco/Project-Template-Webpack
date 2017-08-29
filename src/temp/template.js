@@ -1,5 +1,5 @@
-import hero from './hero.html'
-import body from './body.html'
+import hero from '../hero.html'
+import body from '../body.html'
 
 let content = `
   ${hero}
