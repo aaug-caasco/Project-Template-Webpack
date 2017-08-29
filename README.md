@@ -55,5 +55,6 @@ All your files source files are in src/ directory.
 
 * For image compression the following error may appear:
 ⚠ mozjpeg pre-build test failed ℹ compiling from source ✖ Error: autoreconf
+
 brew install libtool automake autoconf nasm
 brew install libpng
