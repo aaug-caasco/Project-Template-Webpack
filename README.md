@@ -3,6 +3,7 @@
 ### What is this repository for? ###
 
 * A template for new eChannel production team projects.
+* It is based on our sitecore template accessed by right-clicking on a page in sitecore > selecting "insert" > "insert from template" (Templates/User Defined/Insert/V2015/Content)
 
 ### How do I get set up? ###
 
@@ -14,9 +15,21 @@ You have two options:
 NOTE: Do not clone.
 
 
+### Run project ###
+
+
 * To start local project server: "npm start"
 
 * To build: "npm build"
+
+
+### Structure ###
+
+All your files source files are in src/ directory.
+
+* hero.html - to edit your sitecore hero component
+* body.html - to edit the sitecore body
+* template - currently set to the 2015 template (Templates/User Defined/Insert/V2015/Content) you can remove it all to set it as an stand-alone/OM page.
 
 
 ### Contribution guidelines ###
