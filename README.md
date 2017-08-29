@@ -54,10 +54,6 @@ All your files source files are in src/ directory.
 * Not really an issue but it may appear to hang at 94% during image optimization process, it still works just wait
 
 * For image compression the following error may appear:
-⚠ mozjpeg pre-build test failed
-ℹ compiling from source
-✖ Error: autoreconf
-
+⚠ mozjpeg pre-build test failed ℹ compiling from source ✖ Error: autoreconf
 brew install libtool automake autoconf nasm
-
 brew install libpng
