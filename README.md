@@ -2,7 +2,7 @@
 
 ### What is this repository for? ###
 
-* A template for new eChannel production team projects.
+* A template for new eChannel production team projects
 * It is based on our sitecore template accessed by right-clicking on a page in sitecore > selecting "insert" > "insert from template" (Templates/User Defined/Insert/V2015/Content)
 
 ### How do I get set up? ###
@@ -15,10 +15,16 @@ You have two options:
 NOTE: Do not clone.
 
 
+
+
+
 ### Run project ###
 
+1. Once the project repo is installed locally cd in your terminal to the directory location and run "npm install" (note: if you already have a project installed you can just copy over the "node_modules" directory)
 
-* To start local project server: "npm start"
+2. To start local project server run the command "npm start" in your terminal and wait for the response "webpack: Compiled successfully"
+
+3. In your web browser open http://localhost:8080/ to preview your edits
 
 * To build: "npm build"
 
@@ -29,7 +35,7 @@ All your files source files are in src/ directory.
 
 * hero.html - to edit your sitecore hero component
 * body.html - to edit the sitecore body
-* template - currently set to the 2015 template (Templates/User Defined/Insert/V2015/Content) you can remove it all to set it as an stand-alone/OM page.
+* template - currently set to the 2015 template (Templates/User Defined/Insert/V2015/Content) you can remove it all to set it as an stand-alone/OM page
 
 
 ### Contribution guidelines ###
@@ -43,9 +49,11 @@ All your files source files are in src/ directory.
 
 
 
-### Known Dependency issues ###
+### Known issues ###
 
-For image compression the following error may appear:
+* Not really an issue but it may appear to hang at 94% during image optimization process, it still works just wait
+
+* For image compression the following error may appear:
 ⚠ mozjpeg pre-build test failed
 ℹ compiling from source
 ✖ Error: autoreconf
