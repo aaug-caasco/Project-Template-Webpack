@@ -26,7 +26,7 @@ NOTE: Do not clone.
 
 3. In your web browser open http://localhost:8080/ to preview your edits
 
-* To build: "npm build"
+* To build: "npm build" (Optional. build happens every time you run "npm start")
 
 
 ### Structure ###
@@ -57,7 +57,7 @@ All your files source files are in src/ directory.
 
   ⚠ mozjpeg pre-build test failed ℹ compiling from source ✖ Error: autoreconf
 
-  Use the following commands to fix:
+  Use the following commands to fix (you will need to install homebrew https://brew.sh/):
 
   brew install libtool automake autoconf nasm
 
