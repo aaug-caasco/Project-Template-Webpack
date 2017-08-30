@@ -4,13 +4,13 @@
   "description": "Template for local CAASCO Projects.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --content-base build/",
+    "start": "webpack-dev-server --hot --content-base build/ --open",
     "prestart": "npm run build",
     "build": "webpack --config webpack.config.js --color -p --progress"
   },
   "repository": {
     "type": "git",
-    "url": "https://ammo-reyes@bitbucket.org/ammo-reyes/"
+    "url": "git clone https://ammo-reyes@bitbucket.org/CAA-eProd/project-template-webpack.git"
   },
   "keywords": [
     "Webpack 2",
@@ -19,7 +19,7 @@
   ],
   "author": "Richard based on Raphael Hadjadj (https://github.com/RaphaelHadjadj/webpack2-cssmodules-sass#readme)",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/ammo-reyes/",
+  "homepage": "https://bitbucket.org/CAA-eProd/project-template-webpack",
   "devDependencies": {
     "autoprefixer": "6.7.7",
     "babel-core": "6.24.1",
