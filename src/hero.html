@@ -18,40 +18,20 @@
             .main-slide [style*="my__test"] h2 {
               margin-bottom:11px;
             }
-
-            .main-slide [style*="my__test"] p {
-              margin-bottom:16px;
-              margin-left:auto; /*fix odd left margin on in local*/
-            }
-            @media only screen and (max-width: 568px) {
-              /*[style*="my__test"] .mid {
-                  position: relative;
-                  top: 65%;
-                  -webkit-transform: translateY(-63%);
-                  -ms-transform: translateY(-63%);
-                  transform: translateY(-63%);
-              }*/
-              [style*="my__test"] .slick-slide {
-                height: 410px;
-              }
-            }
-            @media only screen and (min-width: 568px) {
-            /*[style*="my__test"] .mid {
-                  position: relative;
-                  top: 60%;
-                  -webkit-transform: translateY(-56%);
-                  -ms-transform: translateY(-56%);
-                  transform: translateY(-56%);
-              }*/
-            }
             [style*="my__test"] h2, [style*="my__test"] p { color:#fff; }
             [style*="my__test"] p {
               max-width: 600px;
               text-align: center;
-              margin-left:auto;
+              margin-left:auto;/*fix odd left margin on in local*/
               margin-right: auto;
+              margin-bottom:16px;
               padding-left: 15px;
               padding-right: 15px;
+            }
+            @media only screen and (max-width: 568px) {
+              [style*="my__test"] .slick-slide {
+                height: 410px;
+              }
             }
           </style>
           <div class="mid">
