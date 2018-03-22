@@ -3,11 +3,13 @@ const path = require('path'),
       ExtractTextPlugin = require('extract-text-webpack-plugin'),
       CleanWebpackPlugin = require('clean-webpack-plugin'),
       CopyWebpackPlugin = require('copy-webpack-plugin'),
-      ImageminPlugin = require('imagemin-webpack-plugin').default;
+      ImageminPlugin = require('imagemin-webpack-plugin').default,
+      ExtractTextPluginStyle = new ExtractTextPlugin("style.css"),
+      ExtractTextPluginHero = new ExtractTextPlugin("hero.css");
 
 //the path(s) that should be cleaned
 let pathsToClean = [
-  'build/css.js', 'build/template.js'
+  'build/main_style.js', 'build/hero_style.js','build/css.js', 'build/template.js'
 ]
 
 // the clean options to use
@@ -23,7 +25,8 @@ module.exports = {
     entry:  {
       index:  './src/index.js',
       template: './src/temp/template.js',
-      css: './src/temp/css.js'
+      main_style: './src/temp/css.js',
+      hero_style: './src/temp/hero.js'
     },
 
     output: {
@@ -74,9 +77,31 @@ module.exports = {
                 }),
             },
             {
-                test: /\.scss$/,
+                test: /style\.scss$/,
                 exclude: /node_modules/,
-                use: ExtractTextPlugin.extract({
+                use: ExtractTextPluginStyle.extract({
+                    fallback: 'style-loader',
+
+                    // Could also be write as follow:
+                    // use: 'css-loader?modules&importLoader=2&sourceMap&localIdentName=[local]!sass-loader'
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            query: {
+                                modules: true,
+                                sourceMap: true,
+                                importLoaders: 2,
+                                localIdentName: '[local]'
+                            }
+                        },
+                        'sass-loader'
+                    ]
+                }),
+            },
+            {
+                test: /hero\.scss$/,
+                exclude: /node_modules/,
+                use: ExtractTextPluginHero.extract({
                     fallback: 'style-loader',
 
                     // Could also be write as follow:
@@ -100,7 +125,8 @@ module.exports = {
 
     plugins: [
         new CleanWebpackPlugin(pathsToClean, cleanOptions),
-        new ExtractTextPlugin("style.css"),
+        ExtractTextPluginStyle,
+        ExtractTextPluginHero,
         new HtmlWebpackPlugin({
             template: 'src/template.html',
             inject: true,
